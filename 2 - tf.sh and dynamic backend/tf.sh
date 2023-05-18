@@ -2,6 +2,9 @@
 
 set -euxo pipefail
 
+export TF_STATE_FILE_NAME=${TF_STATE_FILE_NAME:-main.tfstate}
+export TF_TERRAFORM_EXECUTABLE=${TF_TERRAFORM_EXECUTABLE:-terraform}
+
 export REPO_NAME=$(basename $(git rev-parse --show-toplevel))
 export ENVIRONMENT_ID=$(aws sts get-caller-identity --query Account --output text)
 export BUCKET="myproject-infra-${ENVIRONMENT_ID}"
