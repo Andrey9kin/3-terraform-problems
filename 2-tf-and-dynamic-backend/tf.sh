@@ -17,4 +17,4 @@ terraform init \
   -backend-config "bucket=${BUCKET}" \
   -backend-config "region=${AWS_DEFAULT_REGION}"
 
-terraform "$*"
+${TF_TERRAFORM_EXECUTABLE} "$*"
