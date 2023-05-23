@@ -6,6 +6,10 @@ terraform {
   }
 }
 
+module "s3_base" {
+  source = "../modules/s3-base"
+}
+
 data "aws_ami" "ubuntu" {
   most_recent = true
   filter {
