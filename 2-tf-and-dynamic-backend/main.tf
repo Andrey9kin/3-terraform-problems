@@ -21,5 +21,5 @@ resource "aws_instance" "web" {
     http_put_response_hop_limit = 1
   }
 
-  tags          = { Name = "HelloWorld" }
+  tags = { Name = "HelloWorld" }
 }

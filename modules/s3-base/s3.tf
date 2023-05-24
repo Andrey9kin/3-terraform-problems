@@ -1,8 +1,8 @@
 data "aws_caller_identity" "current" {}
 
 locals {
-    state_bucket_name = format("infra-state-%s", sha1(data.aws_caller_identity.current.account_id))
-    logs_bucket_name  = format("access-logs-%s", sha1(data.aws_caller_identity.current.account_id))
+  state_bucket_name = format("infra-state-%s", sha1(data.aws_caller_identity.current.account_id))
+  logs_bucket_name  = format("access-logs-%s", sha1(data.aws_caller_identity.current.account_id))
 }
 
 resource "aws_s3_account_public_access_block" "block" {
